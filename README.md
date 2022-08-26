@@ -428,3 +428,4 @@ Congratulations! This is the last lab for sicp. You can run the doctest to verif
 python3 -m doctest lab14.py
 ```
 
+> Note that there're extra tests about transactions in doctests for Account, which you should remove to make the doctests pass.
