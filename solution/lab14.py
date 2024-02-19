@@ -237,9 +237,12 @@ def foldl2(link, fn, z):
     6
     >>> foldl2(list, mul, 1) # (((1 * 3) * 2) * 1)
     6
+    >>> list = Link('1', Link('2', Link('3')))
+    >>> foldl2(list, add, '0')
+    '0123'
     """
     def step(x, g):
-        return lambda z: fn(g(z), x)
+        return lambda z: g(fn(z, x))
     return foldr(link, step, identity)(z)
 
 
